@@ -1,0 +1,215 @@
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+
+
+/*  global variable  */
+:root{
+    --moderateViolet: hsl(263, 55%, 52%); /*rgb(117, 65, 200)*/
+    --veryDarGrayishBlue: hsl(217, 19%, 35%); /*	rgb(72, 85, 106) */
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%); /*rgb(25, 33, 46) */
+    --white: hsl(0, 0%, 100%); /* rgb(255, 255, 255)*/
+    --lightGray: hsl(0, 0%, 81%); /*rgb(207, 207, 207) */
+    --lightGrayishBlue: hsl(210, 46%, 95%); /* rgb(236, 242, 248)*/
+    --fontRoot:'Barlow Semi Condensed', sans-serif;
+}
+
+
+/* mobile first */
+   
+
+body{
+    font-family: var(--fontRoot);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    padding:4rem 1rem;
+    background-color: var(--lightGrayishBlue);
+}
+
+img{
+    max-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.purple{
+    background-color:var(--moderateViolet) ;
+    border-color: rgba(255, 255,255, 0.5);
+}
+.none{
+    border-color: var(--veryDarGrayishBlue);
+}
+
+.flex_status{
+    display:flex;
+    align-content: flex-start;
+}
+
+h1 {
+    font-size: 13px;
+}
+h2 {
+    font-size: 0.7rem;
+}
+.status h1, .status h2{
+    margin:0;
+}
+
+.status{
+    margin-left: 20px;
+}
+
+.p_bold{
+    font-size: 1.2rem;
+}
+#first_card{
+    background-color: var(--moderateViolet);
+    color: var(--white);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-position: 90% 0%;
+    background-repeat: no-repeat;
+}   
+#first_card h2{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#first_card .p_normal{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#second_card{
+    background-color: var(--veryDarGrayishBlue);
+    color: var(--white);
+}
+
+#second_card h2{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#second_card .p_normal{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+#third_card{
+    background-color: var(--white);
+    color: var(--veryDarGrayishBlue);
+}
+
+#third_card h2{
+    color:rgba(25, 33, 46,0.75);
+}
+
+#third_card .p_normal{
+    color:rgba(25, 33, 46,0.5);
+}
+
+#fourth_card{
+    background-color: var(--veryDarkBlackishBlue);
+    color: var(--white);
+}
+
+#fourth_card h2{
+    color: rgba(255, 255, 255, 0.25);
+}
+
+#fourth_card .p_normal{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#fifth_card{
+    background-color: var(--white);
+    color:var(--veryDarGrayishBlue);
+}
+
+#fifth_card h2{
+    color:rgba(25, 33, 46,0.25);
+}
+
+#fifth_card .p_normal{
+    color:rgba(25, 33, 46,0.5);
+}
+
+
+.card{
+    border-radius: 10px;
+    padding:2.35rem;
+    height: fit-content;
+}
+
+.card:not(:first-child){
+    margin-top:20px;
+}
+.p_bold{
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+/*    desktop part    */
+@media (min-width: 376px){
+    body{
+        /* padding:5rem; */
+    }
+
+    .container{
+        width: 85%;
+        height: 60%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap:20px;
+    }
+
+    #first_card{
+        background-image: url(./images/bg-pattern-quotation.svg);
+        background-position: 80% 0%;
+        background-repeat: no-repeat;
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        grid-row: 1;
+    }
+
+    #second_card{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row: 1;
+    }
+
+    #third_card{
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #fourth_card{
+        grid-column-start: 2;
+        grid-column-end: span 2;
+        grid-row: 2;
+    }
+
+    #fifth_card{
+        grid-column: 4;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+    }
+
+    .card:not(:first-child){
+        margin-top:0;
+    }
+
+
+}
